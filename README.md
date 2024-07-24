@@ -10,4 +10,4 @@ After upload your photo will be converted into dense, consistent characters that
 * Download button to redraw ASCII into an image (it will take a lot of time if the size is large).
 * Press `Ctrl -` to see the entire image if the size is too large
 
->Last modified January 25, 2024
+>Last modified July 25, 2024
