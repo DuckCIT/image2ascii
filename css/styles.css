@@ -35,7 +35,7 @@ h2 {
   left: 0;
   top: 0;
   display: none;
-  pointer-events: none;
+  pointer-events: auto;
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -73,17 +73,21 @@ input[type="file"] {margin-bottom: 10px;}
 }
 #message {
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;  
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
   padding: 0.5rem;
-  display: block;
+  margin-bottom: 15px;
+  display: inline-block;
   font-size: 14px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 2px #bebebe;
   text-align: center;
   text-shadow: 0 0 1px #bebebe;
 }
 #about {
-  margin: 0 -1rem 1rem;
+  margin: 0 -1rem 2.5rem;
   padding: 0.5rem;
   padding-top: 20px;
   display: block;
@@ -171,4 +175,4 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   0% {transform: scale(1);}
   50% {transform: scale(0.5);}
   100% {transform: scale(1);}
-  }
+}
