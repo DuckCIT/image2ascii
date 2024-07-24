@@ -118,15 +118,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 downloadIMG.addEventListener("click", function () {
   var warning = confirm("It will take a lot of resources and time if the size is too large!");
-  if (warning) { downloadCheck = true } else { downloadCheck = false}
+  if (warning) {
+    downloadCheck = true;
+  } else {
+    downloadCheck = false;
+  }
+
   if (downloadCheck) {
     downloadCheck = false;
     overlay.style.display = "flex";
     loader.forEach(span => {
-    span.style.animationName = "loading";
-});
+      span.style.animationName = "loading";
+    });
+
     var nameImage = imageInput.files[0].name;
-    html2canvas(document.getElementById("asciiResult")).then(canvas => {
+    html2canvas(document.getElementById("asciiResult"), {
+      scale: 3
+    }).then(canvas => {
       var imgData = canvas.toDataURL("image/jpeg");
       var a = document.createElement('a');
       a.href = imgData;
@@ -135,15 +143,16 @@ downloadIMG.addEventListener("click", function () {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+
       overlay.style.display = "none";
-      loader.forEach(span => {   
-      span.style.animationName = "none";
-});
-    });
-    setTimeout(function() {
+      loader.forEach(span => {
+        span.style.animationName = "none";
+      });
+    }).finally(() => {
       downloadCheck = true;
-    }, 500);
+    });
   }
 });
 
 });
+    
