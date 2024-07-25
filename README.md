@@ -1,5 +1,5 @@
 ## Upload and convert image to ASCII
-With this online image converter you can upload your ipg, png, bmp and many other popular types of image.
+With this online image converter you can upload your jpg, png, bmp and many other popular types of image.
 
 After upload your photo will be converted into dense, consistent characters that form an overall picture.
 
